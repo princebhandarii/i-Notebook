@@ -12,7 +12,7 @@ const port = process.env.REACT_APP_PORT || 5000;
 const corsOptions = {
   origin: ["https://unity-book.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "auth-token"]
 };
 
 // Apply CORS middleware with custom options
