@@ -20,10 +20,7 @@ app.use('/api/notes',require('./routes/notes'))
 
 
 /// static file start
-app.use(express.static(path.join(__dirname, "../frontend/build")));
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
-});
+
 
 app.listen(port, () => {
   console.log(`iNoteBook Backend listening on port http://localhost:${port}`)
