@@ -5,25 +5,24 @@ const path = require("path");
 
 connectTOMongo();
 const app = express();
-//const port = 5000
+// const port = 5000
 const port = process.env.REACT_APP_PORT || 5000;
-
 
 // Define CORS options
 const corsOptions = {
-  origin: ["https://notebook-back-front.vercel.app"], // Add any origins that you want to allow
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: "Content-Type, Authorization",
+  origin: ["https://notebook-back-front.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 };
 
 // Apply CORS middleware with custom options
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
 
-app.get("/",(req,res)=>{
-res.json("Hello");
-})
 // Available Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
