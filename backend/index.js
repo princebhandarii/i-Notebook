@@ -10,7 +10,7 @@ const port = process.env.REACT_APP_PORT || 5000;
 
 // Define CORS options
 const corsOptions = {
-  origin: ["https://notebook-back-front.vercel.app"],
+  origin: ["https://unity-book.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 };
